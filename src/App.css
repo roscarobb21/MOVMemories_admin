@@ -3,83 +3,67 @@
   max-width: 1920px;
   margin: 0 auto;
   text-align: center;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
-
-.background-neutral-color
-{
-  background-color: rgba(211, 211, 211, 1); 
+.background-neutral-color {
+  background-color: rgba(211, 211, 211, 1);
 }
 
-.background-dark-color
-{
+.background-dark-color {
   background-color: rgba(0, 0, 0, 1);
 }
 
-.min-height
-{
+.min-height {
   min-height: 20vh;
 }
 
-.stick-to-bottom
-{
-  bottom:0;
+.stick-to-bottom {
+  bottom: 0;
 }
 
-.inverted-color-text
-{
-  color:#FFFDEC;
+.inverted-color-text {
+  color: #fffdec;
 }
 
-.big-text
-{
-  font-size:3rem;
+.big-text {
+  font-size: 3rem;
 }
 
-.medium-text
-{
-  font-size:1.5rem;
+.medium-text {
+  font-size: 1.5rem;
 }
 
-.small-text
-{
-  font-size:1rem;
+.small-text {
+  font-size: 1rem;
 }
 
-.accent-text-color
-{
-  color:white;
+.accent-text-color {
+  color: white;
 }
 
-.italic
-{
+.italic {
   font-style: italic !important;
 }
-.normal
-{
+.normal {
   font-style: normal !important;
 }
-.bold
-{
+.bold {
   font-style: bold;
 }
 
-.left-text-alignment
-{
+.left-text-alignment {
   text-align: left;
 }
 
-.justify-text
-{
+.justify-text {
   text-align: justify;
 }
 
-.space-grotesk-big-bold
-{
+.space-grotesk-big-bold {
   font-family: "Space Grotesk", serif;
   font-optical-sizing: auto;
-  font-size:2rem;
+  font-size: 2rem;
   font-weight: 500;
   font-style: bold;
 }
@@ -93,10 +77,5 @@
   font-family: "Space Grotesk", serif;
   font-optical-sizing: auto;
   font-weight: 300;
-  font-style:normal;
+  font-style: normal;
 }
-
-
-
-
-

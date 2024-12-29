@@ -3,7 +3,7 @@ import Navigator from "../elements/Navbar";
 import { Container, Row, Col } from "reactstrap";
 import about_picture from "../assets/about_picture.jpg";
 
-import Socials from "../elements/Socials"
+import Socials from "../elements/Socials";
 
 import "./About.css";
 
@@ -79,7 +79,7 @@ function About(args) {
             </Col>
           </Row>
         </Container>
-        <Socials/>
+        <Socials />
       </div>
     </div>
   );

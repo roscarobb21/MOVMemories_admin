@@ -4,10 +4,10 @@ import Navigator from "../elements/Navbar";
 import { Container, Row, Col } from "reactstrap";
 
 import background from "../assets/background.jpg";
-import insta_logo from '../assets/instagram_logo.svg';
-import facebook_logo from '../assets/facebook_logo.svg';
-import tiktok_logo from '../assets/tiktok_logo.svg';
-import youtube_logo from '../assets/youtube_logo.svg';
+import insta_logo from "../assets/instagram_logo.svg";
+import facebook_logo from "../assets/facebook_logo.svg";
+import tiktok_logo from "../assets/tiktok_logo.svg";
+import youtube_logo from "../assets/youtube_logo.svg";
 import "./Home.css";
 
 function Home(props) {
@@ -71,11 +71,11 @@ function Home(props) {
 
   useEffect(() => {
     // Add scroll event listener to check when the user scrolls
-    window.addEventListener('scroll', checkIfBottom);
+    window.addEventListener("scroll", checkIfBottom);
 
     // Clean up the event listener when the component is unmounted
     return () => {
-      window.removeEventListener('scroll', checkIfBottom);
+      window.removeEventListener("scroll", checkIfBottom);
     };
   }, []);
 
@@ -93,29 +93,50 @@ function Home(props) {
             Embark on a cinematic journey with us
           </span>
         </Container>
-        <div style={isBottom? bottomElementStyleOpaque : bottomElementStyle} className={`fade-in ${isBottom ? 'visible' : ''}`}>
+        <div
+          style={isBottom ? bottomElementStyleOpaque : bottomElementStyle}
+          className={`fade-in ${isBottom ? "visible" : ""}`}
+        >
           <span className="space-grotesk-slim small-text accent-text-color">
             Join us in our own little social media world
           </span>
           <div>
             <Row className="d-flex justify-content-center">
               <Col className="d-flex justify-content-center">
-            <span><a href="https://instagram.com">
-            <img className="social-logo-small" alt="instagram_logo" src={insta_logo}></img>
-            </a></span>
+                <span>
+                  <a href="https://instagram.com">
+                    <img
+                      className="social-logo-small"
+                      alt="instagram_logo"
+                      src={insta_logo}
+                    ></img>
+                  </a>
+                </span>
 
-            <a href="https://instagram.com">
-            <img className="social-logo-small" alt="instagram_logo" src={facebook_logo}></img>
-            </a>
+                <a href="https://instagram.com">
+                  <img
+                    className="social-logo-small"
+                    alt="instagram_logo"
+                    src={facebook_logo}
+                  ></img>
+                </a>
 
-            <a href="https://instagram.com">
-            <img className="social-logo-small" alt="instagram_logo" src={tiktok_logo}></img>
-            </a>
+                <a href="https://instagram.com">
+                  <img
+                    className="social-logo-small"
+                    alt="instagram_logo"
+                    src={tiktok_logo}
+                  ></img>
+                </a>
 
-            <a href="https://instagram.com">
-            <img className="social-logo-small" alt="instagram_logo" src={youtube_logo}></img>
-            </a>
-            </Col>
+                <a href="https://instagram.com">
+                  <img
+                    className="social-logo-small"
+                    alt="instagram_logo"
+                    src={youtube_logo}
+                  ></img>
+                </a>
+              </Col>
             </Row>
           </div>
         </div>

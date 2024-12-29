@@ -1,32 +1,28 @@
-.showcase-image-res
-{
-    width: 100%;
+.showcase-image-res {
+  width: 100%;
 }
 
-.showcase-image-default-res
-{
-    width:768px;
-    height: 1024px;
+.showcase-image-default-res {
+  width: 768px;
+  height: 1024px;
 }
 
-.showcase-padding-top
-{
-    padding-top:1rem;
+.showcase-padding-top {
+  padding-top: 1rem;
 }
 
-.container-height-adjust
-{
-    height:auto !important;
+.container-height-adjust {
+  height: auto !important;
 }
 
 .content {
-    padding: 50px;
-    background: #f5f5f5;
-    text-align: center;
-  }
-  
-  .wavy-divider {
-    height: 40px;
-    background: #FFFDEC;
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  }
+  padding: 50px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.wavy-divider {
+  height: 40px;
+  background: #fffdec;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}

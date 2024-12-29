@@ -5,7 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 
 import background from "../assets/home_background.jpg";
 
-import Socials from "../elements/Socials"
+import Socials from "../elements/Socials";
 
 import "./Home.css";
 
@@ -62,7 +62,18 @@ function Home(props) {
         <Navigator props={1} />
       </Container>
       <div style={divStyle} id="page-wrap">
-      <div className="inverted-color-text" style={{paddingLeft:'20px', display:'flex', alignItems:'center', justifyContent:'left', height:'900px'}}>Embark on a cinematic journey with us</div>
+        <div
+          className="inverted-color-text"
+          style={{
+            paddingLeft: "20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "left",
+            height: "900px",
+          }}
+        >
+          Embark on a cinematic journey with us
+        </div>
       </div>
       <div className="background-dark-color min-height">
         <Container>
@@ -78,12 +89,10 @@ function Home(props) {
             </Col>
           </Row>
         </Container>
-        <Socials/>
+        <Socials />
       </div>
     </div>
   );
 }
 
 export default Home;
-
-

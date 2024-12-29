@@ -1,9 +1,9 @@
 .left-aligned-label {
-    display: inline-block;
-    text-align: left;
-    vertical-align: top; /* Align label with input */
-  }
+  display: inline-block;
+  text-align: left;
+  vertical-align: top; /* Align label with input */
+}
 
 .form-label {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }

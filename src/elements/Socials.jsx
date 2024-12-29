@@ -1,9 +1,8 @@
-import {Row, Col} from 'reactstrap'
+import { Row, Col } from "reactstrap";
 import insta_logo from "../assets/instagram_inverted.svg";
 import facebook_logo from "../assets/facebook_inverted.svg";
 import tiktok_logo from "../assets/tiktok_inverted.svg";
 import youtube_logo from "../assets/youtube_inverted.svg";
-
 
 function Socials() {
   return (
@@ -54,4 +53,4 @@ function Socials() {
   );
 }
 
-export default Socials
+export default Socials;
