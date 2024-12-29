@@ -4,6 +4,11 @@
     padding:0px;
 }
 
+.offcanvas {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
 /* Ensure the Offcanvas takes up the entire screen */
 .fullscreen-offcanvas {
   position: fixed;      /* Fix it on the screen */
