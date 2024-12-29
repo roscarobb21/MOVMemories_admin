@@ -10,7 +10,9 @@ import {
   Button,
 } from "reactstrap";
 
-import Socials from "../elements/Socials"
+import Socials from "../elements/Socials";
+
+import "./Contact.css";
 
 function Contact() {
   return (
@@ -38,7 +40,7 @@ function Contact() {
             <Row>
               <Col>
                 <FormGroup>
-                  <Label for="first_name">
+                  <Label for="first_name" className="left-aligned-label">
                     <span className="inverted-color-text space-grotesk-1">
                       First Name
                     </span>
@@ -49,7 +51,7 @@ function Contact() {
               </Col>
               <Col>
                 <FormGroup>
-                  <Label for="last_name">
+                  <Label for="last_name" className="left-aligned-label">
                     <span className="inverted-color-text space-grotesk-1">
                       Last Name
                     </span>
@@ -61,7 +63,7 @@ function Contact() {
             </Row>
             <Row>
               <FormGroup>
-                <Label for="last_name">
+                <Label for="last_name" className="left-aligned-label">
                   <span className="inverted-color-text space-grotesk-1">
                     Email
                   </span>
@@ -71,8 +73,8 @@ function Contact() {
               </FormGroup>
             </Row>
             <Row>
-              <FormGroup>
-                <Label for="message">
+              <FormGroup className="d-flex flex-column">
+                <Label for="message" className="mb-1">
                   <span className="inverted-color-text space-grotesk-1 left-text-alignment">
                     Message
                   </span>
@@ -81,11 +83,13 @@ function Contact() {
               </FormGroup>
             </Row>
             <Row>
-              <Button outline style={{width:'33%'}}>Submit</Button>
+              <Button outline style={{ width: "33%" }}>
+                Submit
+              </Button>
             </Row>
           </Form>
         </Container>
-      <Socials/>
+        <Socials />
       </div>
     </div>
   );
