@@ -13,72 +13,13 @@ import {
   Button,
 } from "reactstrap";
 
+import { Offcanvas, OffcanvasHeader, OffcanvasBody } from "reactstrap";
+
 import logo from "../assets/logo.png";
 import { Cross as Hamburger } from "hamburger-react";
 
 import "./Navbar.css";
 import "./SlidingComponent.css";
-
-const WholeScreenDiv = () => {
-  return (
-    <div style={{ alignItems: "center" }} className="whole-screen-menu-padding">
-      <Container>
-        <Row>
-          <a href="/">
-            <span className="nav-text-font nav-text-large nav-option nav-text-underline-sure space-grotesk-1">
-              Home
-            </span>
-          </a>
-        </Row>
-        <br></br>
-        <Row>
-          <a
-            href="/about"
-            className="nav-text-font nav-text-large nav-option space-grotesk-1"
-          >
-            <span className="nav-text-font nav-text-large nav-option nav-text-underline-sure space-grotesk-1">
-              About
-            </span>
-          </a>
-        </Row>
-        <br></br>
-        <Row>
-          <a
-            href="/packages"
-            className="nav-text-font nav-text-large nav-option space-grotesk-1"
-          >
-            <span className="nav-text-font nav-text-large nav-option nav-text-underline-sure space-grotesk-1">
-              Packages
-            </span>
-          </a>
-        </Row>
-        <br></br>
-        <Row>
-          <a
-            href="/"
-            className="nav-text-font nav-text-large nav-option space-grotesk-1"
-          >
-            <span className="nav-text-font nav-text-large nav-option nav-text-underline-sure space-grotesk-1">
-              Portofolio
-            </span>
-          </a>
-        </Row>
-        <br></br>
-        <Row>
-          <a
-            href="/contact"
-            className="nav-text-font nav-text-large nav-option space-grotesk-1"
-          >
-            <span className="nav-text-font nav-text-large nav-option nav-text-underline-sure space-grotesk-1">
-              Contact
-            </span>
-          </a>
-        </Row>
-        <br></br>
-      </Container>
-    </div>
-  );
-};
 
 function Navigator(args) {
   console.log("args " + args.props);
@@ -155,13 +96,13 @@ function Navigator(args) {
                       </span>
                     </NavLink>
                   </NavItem>
-                  <NavItem>
+                  {/* <NavItem>
                     <NavLink href="/">
                       <span className="nav-button-color nav-text-underline space-grotesk-1">
                         Portofolio
                       </span>
                     </NavLink>
-                  </NavItem>
+                  </NavItem> */}
                   <NavItem>
                     <NavLink href="/contact">
                       <span
@@ -181,11 +122,13 @@ function Navigator(args) {
             <Col xl={1} l={1} md={6} s={6} xs={6}>
               <div className="justify-content-xs-start justify-content-md-center">
                 <NavbarBrand className="">
-                  <img
-                    alt="logo"
-                    src={logo}
-                    className="logo header-title-logo"
-                  />
+                  <a href="/">
+                    <img
+                      alt="logo"
+                      src={logo}
+                      className="logo header-title-logo"
+                    />
+                  </a>
                 </NavbarBrand>
               </div>
             </Col>
@@ -196,18 +139,97 @@ function Navigator(args) {
                     display: "flex",
                     justifyContent: "flex-end",
                     alignItems: "center",
+                    zIndex: "1061",
                   }}
                 >
                   <Hamburger
                     toggled={isBurgerOpen}
                     toggle={setBurgerOpen}
                     color="white"
+                    onClick={function noRefCheck() {}}
                   />
                 </div>
               )}
               {isSmallScreen && (
-                <div className={`slide-box ${isBurgerOpen ? "show" : ""}`}>
-                  <WholeScreenDiv />
+                <div>
+                  <Offcanvas
+                    backdrop={false}
+                    direction="bottom"
+                    fade={false}
+                    isOpen={isBurgerOpen} // Controlled by state
+                    toggle={setBurgerOpen} // Toggled by the button or close button inside
+                    className="fullscreen-offcanvas"
+                    style={{ zIndex: 99 }}
+                  >
+                    <OffcanvasBody className="sliding-background-color">
+                      <Container>
+                        <Row>
+                          <a
+                            href="/"
+                            className="nav-text-font nav-text-large nav-option space-grotesk-1"
+                          >
+                            <span
+                              className={`"nav-button-color space-grotesk-1 " ${
+                                currentRoute === "/home" || currentRoute === "/"
+                                  ? "nav-text-underline-sure"
+                                  : "nav-text-underline"
+                              }`}
+                            >
+                              Home
+                            </span>
+                          </a>
+                        </Row>
+                        <Row>
+                          <a
+                            href="/about"
+                            className="nav-text-font nav-text-large nav-option space-grotesk-1"
+                          >
+                            <span
+                              className={`"nav-button-color space-grotesk-1 " ${
+                                currentRoute == "/about"
+                                  ? "nav-text-underline-sure"
+                                  : "nav-text-underline"
+                              }`}
+                            >
+                              About
+                            </span>
+                          </a>
+                        </Row>
+                        <Row>
+                          <a
+                            href="/packages"
+                            className="nav-text-font nav-text-large nav-option space-grotesk-1"
+                          >
+                            <span
+                              className={`"nav-button-color space-grotesk-1 " ${
+                                currentRoute == "/packages"
+                                  ? "nav-text-underline-sure"
+                                  : "nav-text-underline"
+                              }`}
+                            >
+                              Packages
+                            </span>
+                          </a>
+                        </Row>
+                        <Row>
+                          <a
+                            href="/contact"
+                            className="nav-text-font nav-text-large nav-option space-grotesk-1"
+                          >
+                            <span
+                              className={`"nav-button-color space-grotesk-1 " ${
+                                currentRoute == "/contact"
+                                  ? "nav-text-underline-sure"
+                                  : "nav-text-underline"
+                              }`}
+                            >
+                              Contact
+                            </span>
+                          </a>
+                        </Row>
+                      </Container>
+                    </OffcanvasBody>
+                  </Offcanvas>
                 </div>
               )}
             </Col>

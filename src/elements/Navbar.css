@@ -4,9 +4,32 @@
     padding:0px;
 }
 
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
+/* Ensure the Offcanvas takes up the entire screen */
+.fullscreen-offcanvas {
+  position: fixed;      /* Fix it on the screen */
+  top: 0;               /* Align to the top */
+  left: 0;              /* Align to the left */
+  width: 100vw;         /* Full width of the viewport */
+  height: 100vh;        /* Full height of the viewport */
+  max-width: none;      /* Remove any width restrictions */
+  max-height: none;     /* Remove any height restrictions */
+  padding: 0;           /* Remove any padding inside the Offcanvas */
+}
+
+.hamburger-react
+{
+  z-index: 1070 !important;
+}
+
+
+/* If the Offcanvas comes from the bottom */
+.fullscreen-offcanvas[data-bs-direction="bottom"] {
+  height: 100vh;        /* Ensure the Offcanvas stretches to full height */
+  top: auto;
+  bottom: 0;            /* Align to the bottom of the screen */
+  width: 100%;          /* Take full width */
+}
+
 
 .header-title-logo{
     width: auto;
@@ -21,9 +44,6 @@
     padding-bottom: calc(1em / 10);
 }
 
-.nav-wrapper
-{
-}
 .hamburger-react
 {
     z-index: 1000;

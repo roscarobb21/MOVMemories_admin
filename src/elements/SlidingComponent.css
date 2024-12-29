@@ -8,6 +8,16 @@
     align-items: center;
     flex-direction: column;
   }
+
+.sliding-background-color
+{
+  background-color: rgba(163, 161, 146, 1);
+}
+
+.offcanvas.show
+{
+  height:100vh !important;
+}
    
 /* The sliding box */
 .slide-box {
