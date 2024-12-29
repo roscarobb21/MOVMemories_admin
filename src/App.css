@@ -1,0 +1,101 @@
+#root {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.background-neutral-color
+{
+  background-color: rgba(211, 211, 211, 1); 
+}
+
+.background-dark-color
+{
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.min-height
+{
+  min-height: 20vh;
+}
+
+.stick-to-bottom
+{
+  bottom:0;
+}
+
+.inverted-color-text
+{
+  color:#FFFDEC;
+}
+
+.big-text
+{
+  font-size:3rem;
+}
+
+.medium-text
+{
+  font-size:1.5rem;
+}
+
+.small-text
+{
+  font-size:1rem;
+}
+
+.accent-text-color
+{
+  color:white;
+}
+
+.italic
+{
+  font-style: italic !important;
+}
+.normal
+{
+  font-style: normal !important;
+}
+.bold
+{
+  font-style: bold;
+}
+
+.left-text-alignment
+{
+  text-align: left;
+}
+
+.justify-text
+{
+  text-align: justify;
+}
+
+.space-grotesk-big-bold
+{
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-size:2rem;
+  font-weight: 500;
+  font-style: bold;
+}
+.space-grotesk-1 {
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+}
+
+.space-grotesk-slim {
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style:normal;
+}
+
+
+
+
+
