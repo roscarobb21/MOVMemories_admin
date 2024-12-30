@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+.packages-wrapper
+{
+  min-height: var(--minimal-height-min);
+}
+
 .showcase-image-default-res {
   width: 768px;
   height: 1024px;

@@ -10,32 +10,9 @@
 }
 
 .sliding-background-color {
-  background-color: rgba(163, 161, 146, 1);
+  background-color: var(--background-collapse-color);
 }
 
 .offcanvas.show {
   height: 100vh !important;
-}
-
-/* The sliding box */
-.slide-box {
-  position: fixed;
-  bottom: -100vh; /* Initially off-screen */
-  left: 0;
-  width: 100%;
-  height: 100vh; /* Full viewport height */
-  background-color: rgba(163, 161, 146, 1);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0; /* Start off invisible */
-  transition: bottom 0.5s ease-in-out, opacity 0.3s ease;
-  z-index: 999; /* Ensure it is on top of other elements */
-}
-
-/* When the box is shown */
-.slide-box.show {
-  bottom: 0; /* Slide into the screen */
-  opacity: 1; /* Make it visible */
 }

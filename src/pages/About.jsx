@@ -1,15 +1,30 @@
-import Navigator from "../elements/Navbar";
-
+import React, { useState, useEffect } from 'react';
+import debounce from 'lodash.debounce';
 import { Container, Row, Col } from "reactstrap";
-import about_picture from "../assets/about_picture.jpg";
 
+import Navigator from "../elements/Navbar";
+import about_picture from "../assets/about_picture.jpg";
 import Socials from "../elements/Socials";
 
 import "./About.css";
 
+const minimal_width_for_losing_padding = 768;
+
 function About(args) {
-  const currentRoute = location.pathname;
-  console.log(currentRoute);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = debounce(() => {
+    setWindowWidth(window.innerWidth);
+  }, 200); // Debounce for 200ms
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className="background-dark-color">
       <div id="page-wrap">
@@ -20,17 +35,16 @@ function About(args) {
         <br></br>
         <Container fluid className="inverted-color-text">
           <Row>
-            <Col l={6} md={6} s={12} xs={12} className="about-col-padding">
+            <Col l={6} md={6} s={12} xs={12} className={windowWidth > minimal_width_for_losing_padding ? "about-col-padding" : "minimal-padding-on-mobile"}>
               <div
                 style={{ textAlign: "left" }}
-                className="about-text-padding space-grotesk-big-bold"
+                className={"space-grotesk-big-bold " + (windowWidth > minimal_width_for_losing_padding ? "about-text-padding " : "")}
               >
                 Hi, and thank you for stopping by!
               </div>
               <br></br>
               <div
-                style={{ textAlign: "left" }}
-                className="space-grotesk-slim italic about-text-padding"
+                className={"space-grotesk-slim italic justify-text " + (windowWidth > minimal_width_for_losing_padding ? "about-text-padding " : "")}
               >
                 Perhaps you didn't find us by chance, and if you're here, here's
                 what you should know about us:
@@ -70,10 +84,11 @@ function About(args) {
                 <br></br>
                 Let's create something magical together!
               </div>
+              <br></br>
             </Col>
-            <Col l={6} md={6} s={12} xs={12} className="about-col-padding">
+            <Col l={6} md={6} s={12} xs={12} className={windowWidth > minimal_width_for_losing_padding ? "about-col-padding" : "minimal-padding-on-mobile"}>
               <img
-                className="about-picture about-picture-padding"
+                className={"about-picture " + (windowWidth > minimal_width_for_losing_padding ? "about-picture-padding" : "" )}
                 src={about_picture}
               ></img>
             </Col>

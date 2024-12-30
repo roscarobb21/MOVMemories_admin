@@ -13,10 +13,12 @@ function Packages(args) {
   const currentRoute = location.pathname;
   console.log(currentRoute);
   return (
-    <div style={{ minHeight: "200vh" }} className="background-dark-color">
+    <div className="background-dark-color packages-wrapper">
       <div className="page-wrap">
         <Navigator props={1} />
-        <div style={{ minHeight: "150vh" }}>
+        <div>
+          <br></br>
+          <br></br>
           <Container className="container-height-adjust">
             <Row>
               <Col md={4}>
@@ -49,6 +51,7 @@ function Packages(args) {
                     perspective to your wedding film.
                   </div>
                 </div>
+                <br></br>
               </Col>
 
               <Col md={4}>
@@ -83,6 +86,7 @@ function Packages(args) {
                     perspective to your wedding film.
                   </div>
                 </div>
+                <br></br>
               </Col>
 
               <Col md={4}>
@@ -123,11 +127,14 @@ function Packages(args) {
                     perspective to your wedding film.
                   </div>
                 </div>
+                <br></br>
               </Col>
             </Row>
           </Container>
         </div>
       </div>
+      <br></br>
+      <br></br>
       <div className="content wavy-divider">.</div>
       <Socials />
     </div>

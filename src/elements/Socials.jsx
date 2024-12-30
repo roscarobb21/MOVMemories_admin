@@ -4,9 +4,11 @@ import facebook_logo from "../assets/facebook_inverted.svg";
 import tiktok_logo from "../assets/tiktok_inverted.svg";
 import youtube_logo from "../assets/youtube_inverted.svg";
 
+import "./Socials.css";
+
 function Socials() {
   return (
-    <div style={{ paddingBottom: "30px" }}>
+    <div className="socials-padding">
       <div className="inverted-color-text stick-to-bottom space-grotesk-1">
         Join us in our own little social media world
       </div>

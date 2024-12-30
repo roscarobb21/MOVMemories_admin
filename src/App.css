@@ -6,12 +6,30 @@
   overflow-x: hidden;
 }
 
+/* variables */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-dark-color: rgba(0, 0, 0, 1);
+  --background-collapse-color: rgba(0, 0, 0, 1);
+  --font-color: #F8FAFC;
+  --minimal-height-max: 200vh;
+  --minimal-height-min: 100vh;
+  --font-size: 16px;
+}
+
+.justify-text
+{
+  text-align: "justify";
+}
+
 .background-neutral-color {
   background-color: rgba(211, 211, 211, 1);
 }
 
 .background-dark-color {
   background-color: rgba(0, 0, 0, 1);
+  /* background-color: #1A1A19; */
 }
 
 .min-height {
@@ -23,7 +41,7 @@
 }
 
 .inverted-color-text {
-  color: #fffdec;
+  color: var(--font-color) !important;
 }
 
 .big-text {

@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   // base: "/MOVMemories/",
   build: {
-    outDir: 'dist', // Default build output folder
+    outDir: 'public', // Default build output folder
   },
 })

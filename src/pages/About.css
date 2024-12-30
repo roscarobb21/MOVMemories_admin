@@ -8,6 +8,12 @@
   padding-right: 1rem;
 }
 
+.minimal-padding-on-mobile
+{
+  padding-left:20px !important;
+  padding-right:20px !important;
+}
+
 .about-picture {
   width: 100%; /* Make the image width responsive */
   height: 100%; /* Make the image height responsive */
