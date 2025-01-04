@@ -151,7 +151,9 @@ function Navigator(args) {
                     isOpen={isBurgerOpen} // Controlled by state
                     toggle={setBurgerOpen} // Toggled by the button or close button inside
                     className="fullscreen-offcanvas"
-                    style={{ zIndex: 99 }}
+                    style={{ zIndex: 99, overflowY:'hidden' }}
+                    scrollable={false}
+                    unmountOnClose={false}
                   >
                     <OffcanvasBody className="sliding-background-color">
                       <Container>

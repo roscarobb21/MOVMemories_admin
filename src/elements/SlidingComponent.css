@@ -14,5 +14,36 @@
 }
 
 .offcanvas.show {
+  visibility: visible !important;
   height: 100vh !important;
+}
+
+.offcanvas {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Ensure the Offcanvas takes up the entire screen */
+.fullscreen-offcanvas {
+  visibility: hidden;
+  position: fixed; /* Fix it on the screen */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  max-width: none; /* Remove any width restrictions */
+  max-height: none; /* Remove any height restrictions */
+  padding: 0; /* Remove any padding inside the Offcanvas */
+}
+
+/* If the Offcanvas comes from the bottom */
+.fullscreen-offcanvas[data-bs-direction="bottom"] {
+  height: 100vh; /* Ensure the Offcanvas stretches to full height */
+  /* top: auto; */
+  /* bottom: 0;  */
+  width: 100%; /* Take full width */
+}
+
+.offcanvas.offcanvas-bottom {
+  height: auto !important;
 }
