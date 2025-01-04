@@ -111,12 +111,12 @@ function Contact() {
           <br></br>
           <Form onSubmit={handleSubmit}>
             <Row>
-              <Col>
-                <FormGroup>
+              <Col lg={6} md={12}>
+                <FormGroup className="d-flex flex-column">
                   <FormFeedback invalid={generalError}>
                     {generalError}
                   </FormFeedback>
-                  <Label for="firstName" className="left-aligned-label">
+                  <Label for="firstName" className="form-label">
                     <span className="inverted-color-text space-grotesk-1">
                       First Name
                     </span>
@@ -130,9 +130,9 @@ function Contact() {
                   />
                 </FormGroup>
               </Col>
-              <Col>
-                <FormGroup>
-                  <Label for="lastName" className="left-aligned-label">
+              <Col lg={6} md={12}>
+                <FormGroup className="d-flex flex-column">
+                  <Label for="lastName" className="form-label">
                     <span className="inverted-color-text space-grotesk-1">
                       Last Name
                     </span>
@@ -148,8 +148,8 @@ function Contact() {
               </Col>
             </Row>
             <Row>
-              <FormGroup>
-                <Label for="email" className="left-aligned-label">
+              <FormGroup className="d-flex flex-column">
+                <Label for="email" className="form-label">
                   <span className="inverted-color-text space-grotesk-1">
                     Email
                   </span>
@@ -167,8 +167,8 @@ function Contact() {
               </FormGroup>
             </Row>
             <Row>
-              <FormGroup>
-                <Label for="number" className="left-aligned-label">
+              <FormGroup className="d-flex flex-column">
+                <Label for="number" className="form-label">
                   <span className="inverted-color-text space-grotesk-1">
                     Phone Number
                   </span>
@@ -184,7 +184,7 @@ function Contact() {
             </Row>
             <Row>
               <FormGroup className="d-flex flex-column">
-                <Label for="message" className="mb-1">
+                <Label for="message" className="mb-1 form-label">
                   <span className="inverted-color-text space-grotesk-1 left-text-alignment">
                     Message
                   </span>
@@ -199,9 +199,11 @@ function Contact() {
               </FormGroup>
             </Row>
             <Row>
+              <Col className="d-flex">
               <Button outline style={{ width: "33%" }}>
                 Submit
               </Button>
+              </Col>
             </Row>
           </Form>
           {generalError.length > 0 && (

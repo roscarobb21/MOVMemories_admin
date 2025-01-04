@@ -1,9 +1,11 @@
+
 .left-aligned-label {
-  display: inline-block;
-  text-align: left;
-  vertical-align: top; /* Align label with input */
+  min-width: 100px; /* Define a fixed width if needed for alignment */
+  text-align: right; /* Optional for better alignment */
 }
 
 .form-label {
+  position: relative;
+  text-align: left;
   margin-bottom: 0 !important;
 }
