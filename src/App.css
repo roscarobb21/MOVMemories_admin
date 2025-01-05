@@ -8,14 +8,28 @@
 
 /* variables */
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
+  --primary-color: #000000;
+  --secondary-color: #d6d6d6;
   --background-dark-color: rgba(0, 0, 0, 1);
   --background-collapse-color: rgba(0, 0, 0, 1);
   --font-color: #F8FAFC;
+  --bs-btn-color : #F8FAFC !important;
   --minimal-height-max: 200vh;
   --minimal-height-min: 100vh;
   --font-size: 16px;
+}
+
+.margin-from-header
+{
+  margin-top:60px;
+}
+
+.default-container-padding
+{
+  padding-top:0 !important;
+  padding-left:60px !important;
+  padding-right:60px !important;
+  padding-bottom: 30px !important;
 }
 
 .justify-text

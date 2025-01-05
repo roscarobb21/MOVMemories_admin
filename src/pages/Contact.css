@@ -9,3 +9,9 @@
   text-align: left;
   margin-bottom: 0 !important;
 }
+
+.contact-button
+{
+  width: 33%;
+  color: var(--font-color);
+}

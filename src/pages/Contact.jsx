@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navigator from "../elements/Navbar";
 import { Container, Row, Col } from "reactstrap";
 import {
@@ -13,11 +13,12 @@ import {
 import { db, collection, addDoc } from "../firebase";
 
 import Socials from "../elements/Socials";
+import Loader from "../pages/Loader";
 
 import "./Contact.css";
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-function Contact() {
+function Contact({langData}) {
   const [emailValid, setEmailValid] = useState(undefined);
   const [generalError, setGeneralError] = useState("");
   const [submit, setSubmit] = useState(undefined)
@@ -31,6 +32,12 @@ function Contact() {
   });
 
   const [statusMessage, setStatusMessage] = useState("");
+  const [langFile, setLangFile] = useState(null)
+
+  useEffect(() =>{
+    setLangFile(langData)
+    console.log(langData)
+  },[])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -88,27 +95,34 @@ function Contact() {
     }
   };
 
+  if (langFile === null)
+  {
+    return <Loader />;
+  }
+
   return (
     <div>
       <div style={{ minHeight: "100vh" }} className="background-dark-color">
         <Navigator props={1} />
-        <Container>
+        <Container fluid style={{minHeight:'100vh'}} className="margin-from-header default-container-padding">
           <Row>
-            <div className="inverted-color-text space-grotesk-1 medium-text">
-              Fill out the form below, and we'll get back to you faster than you
-              can say “I do.”{" "}
+            <Col lg={6} md={12}>
+          <Row>
+            <div className="inverted-color-text space-grotesk-big-bold medium-text justify-text">
+              {langFile.header}
             </div>
           </Row>
           <br></br>
           <br></br>
           <Row>
-            <div className="inverted-color-text space-grotesk-1">
-              Alternatively, you can email us @ info@movmemories.com or contact
-              us on social media by pressing on your preferred one below
+            <div className="inverted-color-text space-grotesk-slim justify-text">
+              {/* Alternatively, you can email us @ info@movmemories.com or contact
+              us on social media by pressing on your preferred one below */}
+              {langFile.body}
             </div>
           </Row>
-          <br></br>
-          <br></br>
+          </Col>
+          <Col lg={6} md={12}>
           <Form onSubmit={handleSubmit}>
             <Row>
               <Col lg={6} md={12}>
@@ -118,7 +132,7 @@ function Contact() {
                   </FormFeedback>
                   <Label for="firstName" className="form-label">
                     <span className="inverted-color-text space-grotesk-1">
-                      First Name
+                      {langFile.contact_form.first_name}
                     </span>
                   </Label>
                   <Input
@@ -134,7 +148,8 @@ function Contact() {
                 <FormGroup className="d-flex flex-column">
                   <Label for="lastName" className="form-label">
                     <span className="inverted-color-text space-grotesk-1">
-                      Last Name
+                      {/* Last Name */}
+                      {langFile.contact_form.last_name}
                     </span>
                   </Label>
                   <Input
@@ -151,7 +166,8 @@ function Contact() {
               <FormGroup className="d-flex flex-column">
                 <Label for="email" className="form-label">
                   <span className="inverted-color-text space-grotesk-1">
-                    Email
+                    {/* Email */}
+                    {langFile.contact_form.email}
                   </span>
                 </Label>
                 <Input
@@ -162,7 +178,7 @@ function Contact() {
                   name="email"
                 />
                 <FormFeedback invalid={generalError}>
-                  Please provide valid email address 🥰
+                  {langFile.contact_form.email_error}
                 </FormFeedback>
               </FormGroup>
             </Row>
@@ -170,7 +186,8 @@ function Contact() {
               <FormGroup className="d-flex flex-column">
                 <Label for="number" className="form-label">
                   <span className="inverted-color-text space-grotesk-1">
-                    Phone Number
+                    {/* Phone Number */}
+                    {langFile.contact_form.phone_number}
                   </span>
                 </Label>
                 <Input
@@ -186,7 +203,8 @@ function Contact() {
               <FormGroup className="d-flex flex-column">
                 <Label for="message" className="mb-1 form-label">
                   <span className="inverted-color-text space-grotesk-1 left-text-alignment">
-                    Message
+                    {/* Message */}
+                    {langFile.contact_form.message}
                   </span>
                 </Label>
                 <Input
@@ -200,8 +218,9 @@ function Contact() {
             </Row>
             <Row>
               <Col className="d-flex">
-              <Button outline style={{ width: "33%" }}>
-                Submit
+              <Button outline className="contact-button">
+                {/* Submit */}
+                {langFile.contact_form.submit}
               </Button>
               </Col>
             </Row>
@@ -222,8 +241,11 @@ function Contact() {
                 setSubmit(undefined);
               }}
             >
-              Form submitted. We will contact you asap 🥰
+              {/* Form submitted. We will contact you asap 🥰 */}
+              {langFile.contact_form.submit_success}
             </Alert>}
+            </Col>
+            </Row>
         </Container>
         <Socials />
       </div>
