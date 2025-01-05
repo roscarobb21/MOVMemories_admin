@@ -4,15 +4,18 @@ import Navigator from "../elements/Navbar";
 import background from "../assets/home_background.jpg";
 import Socials from "../elements/Socials";
 
+import Loader from "../pages/Loader"
+
 import "./Home.css";
 
-function Home({langData}) {
-  const [langFile, setLangFile] = useState("")
+function Home({ langData, navData }) {
+  const [langFile, setLangFile] = useState(null)
+  const [navLang, setNavLang] = useState(null)
 
-  useEffect(() =>{
-    setLangFile(langData)
-    console.log(langData)
-  },[])
+  useEffect(() => {
+    if (langData) setLangFile(langData);
+    if (navData) setNavLang(navData);
+  }, [langData, navData]);
 
   const divStyle = {
     backgroundImage: `url(${background})`, // Set the imported image URL
@@ -23,10 +26,15 @@ function Home({langData}) {
     backgroundAttachment: "scroll",
   };
 
+  if (!langFile || !navLang)
+  {
+    return <Loader/>
+  }
+
   return (
     <div style={{ minHeight: "200vh" }}>
       <Container fluid style={{ width: "100%", padding: 0 }}>
-        <Navigator props={1} />
+        <Navigator lang={navLang} />
       </Container>
       <div style={divStyle} id="page-wrap">
         <div

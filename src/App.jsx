@@ -12,14 +12,13 @@ import Loader from './pages/Loader';
 
 
 function App() {
-  const [lang, setlang] = useState("");
+  const [lang, setlang] = useState(null);
   const [langData, setLangData] = useState(null);
 
   const get_lang_file = async (lang) => {
-      let response = await fetch('./assets/lang-' + lang + ".json") // Adjust the path to match the file's location in the public folder
-      let json_response = await response.json();
-      console.log(json_response)
-      setLangData(json_response)
+    let response = await fetch("./assets/lang-" + lang + ".json"); // Adjust the path to match the file's location in the public folder
+    let json_response = await response.json();
+    setLangData(json_response);
   };
 
   // Retrieve the name from localStorage when the component mounts
@@ -27,36 +26,65 @@ function App() {
     const lang = localStorage.getItem("language");
     if (lang === null) {
       // use EN by default
-      console.log("Not present");
+      console.log("Language not set. Default - EN");
       setlang("EN");
       localStorage.setItem("language", "EN");
     } else {
-      console.log("Present");
+      console.log("Language set");
       setlang(lang);
     }
     get_lang_file(lang);
   }, []);
 
-  if (langData != null){
-    return (
-      <Router>
-        <div style={{ width: "100%" }}>
-          <Routes>
-            {" "}
-            {/* Define all your routes here */}
-            <Route path="/" element={<Home langData={langData["pages"]["home"]}/>} /> 
-            <Route path="/home" element={<Home />} /> 
-            <Route path="/about" element={<About langData={langData["pages"]["about"]}/>} />
-            <Route path="/packages" element={<Packages langData={langData["pages"]["packages"]}/>} />
-            <Route path="/contact" element={<Contact langData={langData["pages"]["contact"]}/>} />
-          </Routes>
-        </div>
-      </Router>
-    );
+  if (!langData) {
+    return <Loader />;
   }
-  else{
-  return <Loader />;
-  }
+  console.log(langData.pages.home)
+  return (
+    <Router>
+      <div style={{ width: "100%" }}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+              langData={langData["pages"]["home"]}
+              navData={langData["navbar"]}
+              />
+            }
+          />
+          <Route path="/home" element={<Home />} />
+          <Route
+            path="/about"
+            element={
+              <About
+                langData={langData["pages"]["about"]}
+                navData={langData["navbar"]}
+              />
+            }
+          />
+          <Route
+            path="/packages"
+            element={
+              <Packages
+                langData={langData["pages"]["packages"]}
+                navData={langData["navbar"]}
+              />
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <Contact
+                langData={langData["pages"]["contact"]}
+                navData={langData["navbar"]}
+              />
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
 export default App;

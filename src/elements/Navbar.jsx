@@ -15,14 +15,20 @@ import { Offcanvas, OffcanvasBody } from "reactstrap";
 
 import logo from "../assets/logo.png";
 import { Cross as Hamburger } from "hamburger-react";
-
+import Loader from "../pages/Loader"
 import "./Navbar.css";
 import "./SlidingComponent.css";
 
-function Navigator(args) {
+function Navigator({lang}) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
   const [isBurgerOpen, setBurgerOpen] = useState(false);
+  const [navLang, setNavlang] = useState(null);
+
+  useEffect(() => {
+    setNavlang(lang);
+    console.log('lang' + lang)
+  }, [lang]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,14 +44,14 @@ function Navigator(args) {
 
   const currentRoute = location.pathname;
 
+  if (!navLang) {
+    return <Loader />;
+  }
+
   return (
     <div>
       <Container
         fluid
-        // style={{
-        //   backgroundColor: "rgba(0, 0, 0," + args.props + ")",
-        //   width: "100%",
-        // }}
         className="background-dark-color"
       >
         <Row className={"d-flex " + (isSmallScreen ? "" : "justify-content-between align-items-center")}>
@@ -81,7 +87,7 @@ function Navigator(args) {
 
         <Row className="d-flex justify-content-center align-items-center">
             <Col xl={12} l={12} md={12} s={0} xs={0} className="d-flex justify-content-center align-items-center">
-              <Navbar {...args} expand="md">
+              <Navbar expand="md">
               <Collapse isOpen={isOpen} navbar>
                 <Nav className="me-auto" navbar>
                   <NavItem className="mx-2">
@@ -93,7 +99,7 @@ function Navigator(args) {
                             : "nav-text-underline"
                         }`}
                       >
-                        Home
+                        {navLang.home}
                       </span>
                     </NavLink>
                   </NavItem>
@@ -106,7 +112,7 @@ function Navigator(args) {
                             : "nav-text-underline"
                         }`}
                       >
-                        About
+                        {navLang.about}
                       </span>
                     </NavLink>
                   </NavItem>
@@ -119,7 +125,7 @@ function Navigator(args) {
                             : "nav-text-underline"
                         }`}
                       >
-                        Packages
+                        {navLang.packages}
                       </span>
                     </NavLink>
                   </NavItem>
@@ -132,7 +138,7 @@ function Navigator(args) {
                             : "nav-text-underline"
                         }`}
                       >
-                        Contact
+                        {navLang.contact}
                       </span>
                     </NavLink>
                   </NavItem>
@@ -169,7 +175,7 @@ function Navigator(args) {
                                   : "nav-text-underline"
                               }`}
                             >
-                              Home
+                              {navLang.home}
                             </span>
                           </a>
                         </Row>
@@ -185,7 +191,7 @@ function Navigator(args) {
                                   : "nav-text-underline"
                               }`}
                             >
-                              About
+                              {navLang.about}
                             </span>
                           </a>
                         </Row>
@@ -201,7 +207,7 @@ function Navigator(args) {
                                   : "nav-text-underline"
                               }`}
                             >
-                              Packages
+                              {navLang.packages}
                             </span>
                           </a>
                         </Row>
@@ -217,7 +223,7 @@ function Navigator(args) {
                                   : "nav-text-underline"
                               }`}
                             >
-                              Contact
+                              {navLang.contact}
                             </span>
                           </a>
                         </Row>
