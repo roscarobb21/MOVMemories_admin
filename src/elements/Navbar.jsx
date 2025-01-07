@@ -9,6 +9,10 @@ import {
   Container,
   Row,
   Col,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownItem,
+  DropdownMenu
 } from "reactstrap";
 
 import { Offcanvas, OffcanvasBody } from "reactstrap";
@@ -177,20 +181,31 @@ function Navigator({lang}) {
                       </span>
                     </NavLink>
                   </NavItem>
-                  <NavItem className="mx-2">
-                    <div
-                      style={{ width: "100%", height: "100%" }}
-                      className="d-flex justify-content-center align-items-center"
-                    >
-                      <div className="language-select" onClick={()=>{
-                        localStorage.setItem('language', "EN");
-                        window.location.reload();
-                      }}>🇬🇧</div> &nbsp; | &nbsp;<div className="language-select" onClick={()=>{
-                        localStorage.setItem('language', "RO");
-                        window.location.reload();
-                      }}>🇷🇴</div>
-                    </div>
-                  </NavItem>
+                  <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav caret>
+                      <span className="nav-button-color space-grotesk-1 inverted-color-text ">
+                        Language
+                      </span>
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem
+                        onClick={() => {
+                          localStorage.setItem("language", "EN");
+                          window.location.reload();
+                        }}
+                      >
+                        EN 🇬🇧
+                      </DropdownItem>
+                      <DropdownItem
+                        onClick={() => {
+                          localStorage.setItem("language", "RO");
+                          window.location.reload();
+                        }}
+                      >
+                        RO 🇷🇴
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
                 </Nav>
               </Collapse>
             </Navbar>
@@ -275,6 +290,61 @@ function Navigator({lang}) {
                             {navLang.contact}
                           </span>
                         </a>
+                      </Row>
+                      <br></br>
+                      <Row>
+                        {/* <UncontrolledDropdown className="">
+                          <DropdownToggle nav caret className="">
+                            <div className="">
+                              Language
+                            </div>
+                          </DropdownToggle>
+                          <DropdownMenu right>
+                            <DropdownItem
+                              onClick={() => {
+                                localStorage.setItem("language", "EN");
+                                window.location.reload();
+                              }}
+                            >
+                              EN 🇬🇧
+                            </DropdownItem>
+                            <DropdownItem
+                              onClick={() => {
+                                localStorage.setItem("language", "RO");
+                                window.location.reload();
+                              }}
+                            >
+                              RO 🇷🇴
+                            </DropdownItem>
+                          </DropdownMenu>
+                        </UncontrolledDropdown> */}
+                        <UncontrolledDropdown dark style={{ background: ".unset" }}>
+                          <DropdownToggle
+                            tag="span"
+                            className="nav-text-font nav-text-large nav-option space-grotesk-1"
+                          >
+                            {" "}
+                            <span className="nav-button-color space-grotesk-1 inverted-color-text" style={{fontSize:'2rem'}}>Language</span>
+                          </DropdownToggle>
+                          <DropdownMenu dark>
+                          <DropdownItem
+                              onClick={() => {
+                                localStorage.setItem("language", "EN");
+                                window.location.reload();
+                              }}
+                            >
+                              EN 🇬🇧
+                            </DropdownItem>
+                            <DropdownItem
+                              onClick={() => {
+                                localStorage.setItem("language", "RO");
+                                window.location.reload();
+                              }}
+                            >
+                              RO 🇷🇴
+                            </DropdownItem>
+                          </DropdownMenu>
+                        </UncontrolledDropdown>
                       </Row>
                     </Container>
                   </OffcanvasBody>
