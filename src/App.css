@@ -18,7 +18,21 @@
   --minimal-height-min: 100vh;
   --font-size: 16px;
 }
+/* Optional: Debugging borders to verify heights */
+.debug {
+  border: 1px solid red !important;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
 
+.align-items-stretch {
+  align-items: stretch !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
 .margin-from-header
 {
   margin-top:60px;

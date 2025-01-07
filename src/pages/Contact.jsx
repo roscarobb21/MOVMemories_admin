@@ -58,7 +58,6 @@ function Contact({langData, navData}) {
 
     if (!emailRegex.test(formData.email)) {
       setEmailValid(true);
-      console.log("email invalid " + formData.email);
       return;
     }
     if (

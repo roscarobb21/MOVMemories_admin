@@ -30,7 +30,6 @@ function Home({ langData, navData }) {
   {
     return <Loader/>
   }
-
   return (
     <div style={{ minHeight: "200vh" }}>
       <Container fluid style={{ width: "100%", padding: 0 }}>

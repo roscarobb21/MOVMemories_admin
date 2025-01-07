@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import "./App.css";
 
-import {Spinner, Container} from 'reactstrap'
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Packages from "./pages/Packages";
@@ -16,7 +15,9 @@ function App() {
   const [langData, setLangData] = useState(null);
 
   const get_lang_file = async (lang) => {
-    let response = await fetch("./assets/lang-" + lang + ".json"); // Adjust the path to match the file's location in the public folder
+    const path = "./assets/lang-" + lang + ".json"
+    console.log("Lang path is : ", path);
+    let response = await fetch(path); // Adjust the path to match the file's location in the public folder
     let json_response = await response.json();
     setLangData(json_response);
   };
@@ -39,7 +40,7 @@ function App() {
   if (!langData) {
     return <Loader />;
   }
-  console.log(langData.pages.home)
+
   return (
     <Router>
       <div style={{ width: "100%" }}>
@@ -48,12 +49,20 @@ function App() {
             path="/"
             element={
               <Home
-              langData={langData["pages"]["home"]}
-              navData={langData["navbar"]}
+                langData={langData["pages"]["home"]}
+                navData={langData["navbar"]}
               />
             }
           />
-          <Route path="/home" element={<Home />} />
+          <Route
+            path="/home"
+            element={
+              <Home
+                langData={langData["pages"]["home"]}
+                navData={langData["navbar"]}
+              />
+            }
+          />
           <Route
             path="/about"
             element={

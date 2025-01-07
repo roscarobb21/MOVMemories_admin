@@ -1,0 +1,65 @@
+{
+  "language": "EN",
+  "navbar":{
+    "home": "Home",
+    "about": "About",
+    "packages": "Packages",
+    "contact": "Contact"
+  },
+  "pages": {
+    "home": {
+      "small_accent": "Limba romana"
+    },
+    "about": {
+        "header_text":"Fisierul de limba romana",
+        "body_text_1":"Aenean fermentum tellus vitae turpis varius aliquam. Nunc eros enim, faucibus id hendrerit eget, vulputate ut enim:",
+        "body_text_2":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia placerat lacus. Nunc molestie ex dictum, gravida eros ac, sagittis urna. Donec ultrices lobortis nisi, nec malesuada arcu lacinia sed. Curabitur pulvinar, enim in pharetra vehicula, nulla erat convallis libero, non porta dui diam ut erat. Vestibulum metus lorem, porttitor quis lectus non, egestas facilisis risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "body_text_3":"Nullam a vulputate diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
+        "body_text_4":"Aenean sollicitudin, massa eu volutpat convallis, ante diam pharetra mauris, ac accumsan ex eros sagittis turpis. Aenean vitae ipsum eget enim laoreet vehicula eu vitae nibh.",
+        "body_text_5":"Integer at ligula a nunc viverra condimentum cursus consectetur dui. Ut ac fermentum lacus. Sed erat metus, tincidunt ac mi a, aliquet tristique dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a pellentesque tortor, eu porta risus. Aliquam rutrum venenatis lorem. Donec condimentum nec nisl et ullamcorper.",
+        "body_text_6":"Morbi a ultricies sem. Nulla leo risus, ultricies id sapien et, iaculis elementum augue. Vestibulum ornare tellus vitae sapien lacinia, ut bibendum dolor hendrerit. Nullam aliquam quis felis ut tincidunt. Etiam faucibus leo non enim dignissim, pharetra pharetra mauris viverra.",
+        "body_text_7":"Maecenas ornare mattis lorem. Praesent lobortis in mauris nec maximus. Ut vitae eros eu eros molestie mollis vitae sit amet ex.",
+        "body_text_8":"Fusce facilisis nisl in enim tristique, a viverra libero vestibulum!"
+      },
+    "packages": [
+      {
+        "header": "Memories Box “Dancing into Forever”",
+        "price_tag": "1500 RON",
+        "description": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue nibh a risus consequat vestibulum nec quis nisl. Nulla porttitor justo vel suscipit fermentum. Aenean interdum vitae sapien et aliquet.",
+          "Curabitur ut auctor nibh, at condimentum velit. Pellentesque posuere elit vel lobortis rhoncus. In posuere leo nunc, vel accumsan neque pellentesque non."
+        ]
+      },
+      {
+        "header": "Memories Box “How it all started”",
+        "price_tag": "1800 RON",
+        "description": ["Integer vel turpis sed dui luctus iaculis. Vestibulum volutpat augue nunc, ut fringilla tellus aliquam sit amet. " , 
+        "ellentesque tristique massa at arcu aliquam facilisis. Quisque dui lectus, pharetra at justo viverra, ultricies sagittis urna. "]
+      },
+      {
+        "header": "Memories Box “Love Fiesta”",
+        "price_tag": "2200 RON",
+        "description": [
+          "Proin at augue sem. Vestibulum maximus velit a est fermentum faucibus. Fusce mattis diam urna, id porttitor nisl tincidunt ut Nulla feugiat aliquet risus eu dictum. Integer ultricies mattis dui vitae auctor. Vivamus aliquet, dui eget ullamcorper rhoncus, risus mi vulputate ex, quis sollicitudin ipsum lorem eu augue.",
+          "Aliquam venenatis vulputate purus. Sed id nisl ligula. Maecenas nulla est, varius ullamcorper arcu vitae, malesuada cursus risus. Cras posuere lectus id massa luctus, id fermentum ipsum mollis. Donec pellentesque a nulla nec pulvinar. Aliquam erat volutpat. ",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec facilisis dui. Sed nec mollis orci, sit amet varius lectus."
+        ]
+      }
+    ],
+  "contact" :
+  {
+    "header" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue nibh a risus consequat vestibulum nec quis nisl. ",
+    "body" : "Proin at augue sem. Vestibulum maximus velit a est fermentum faucibus. Fusce mattis diam urna, id porttitor nisl tincidunt ut. Praesent lacus lacus, posuere id nulla eget info@movmemories.com eugiat aliquet risus eu dictum.",
+    "contact_form": {
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "phone_number": "Phone Number",
+      "message": "Message",
+      "submit":"Submit",
+      "email_error":"Please provide valid email address 🥰",
+      "submit_success":"Form submitted. We will contact you asap 🥰"
+    }
+  }
+}
+}

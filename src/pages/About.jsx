@@ -17,7 +17,6 @@ function About({langData, navData}) {
   useEffect(() =>{
     if (langData) setLangFile(langData)
     if (navData) setNavLang(navData)
-    console.log(langFile)
   },[langData,navData])
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

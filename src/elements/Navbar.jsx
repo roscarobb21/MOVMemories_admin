@@ -27,7 +27,6 @@ function Navigator({lang}) {
 
   useEffect(() => {
     setNavlang(lang);
-    console.log('lang' + lang)
   }, [lang]);
 
   useEffect(() => {
@@ -50,19 +49,48 @@ function Navigator({lang}) {
 
   return (
     <div>
-      <Container
-        fluid
-        className="background-dark-color"
-      >
-        <Row className={"d-flex " + (isSmallScreen ? "" : "justify-content-between align-items-center")}>
-          <Col xl={12} l={12} md={12} s={6} xs={6} className={"d-flex " + (isSmallScreen ? "" : "justify-content-center align-items-center")}>
-            <div className={"text-center logo-top-margin " + (isSmallScreen ? "margin-left-logo-menu" : "")}>
+      <Container fluid className="background-dark-color">
+        <Row
+          className={
+            "d-flex " +
+            (isSmallScreen ? "" : "justify-content-between align-items-center")
+          }
+        >
+          <Col
+            xl={12}
+            l={12}
+            md={12}
+            s={6}
+            xs={6}
+            className={
+              "d-flex " +
+              (isSmallScreen ? "" : "justify-content-center align-items-center")
+            }
+          >
+            <div
+              className={
+                "text-center logo-top-margin " +
+                (isSmallScreen ? "margin-left-logo-menu" : "")
+              }
+            >
               <NavbarBrand className="" href="/">
                 <img alt="logo" src={logo} className="logo header-title-logo" />
               </NavbarBrand>
             </div>
           </Col>
-          <Col xl={0} l={0} md={0} s={6} xs={6} className={"d-flex " + (isSmallScreen ? "hamburger-small-screen" : "justify-content-center align-items-center")}>
+          <Col
+            xl={0}
+            l={0}
+            md={0}
+            s={6}
+            xs={6}
+            className={
+              "d-flex " +
+              (isSmallScreen
+                ? "hamburger-small-screen"
+                : "justify-content-center align-items-center")
+            }
+          >
             {isSmallScreen && (
               <div
                 style={{
@@ -70,7 +98,7 @@ function Navigator({lang}) {
                   justifyContent: "flex-end",
                   alignItems: "center",
                   zIndex: "1061",
-                  marginTop:'20px'
+                  marginTop: "20px",
                 }}
               >
                 <Hamburger
@@ -86,8 +114,15 @@ function Navigator({lang}) {
         </Row>
 
         <Row className="d-flex justify-content-center align-items-center">
-            <Col xl={12} l={12} md={12} s={0} xs={0} className="d-flex justify-content-center align-items-center">
-              <Navbar expand="md">
+          <Col
+            xl={12}
+            l={12}
+            md={12}
+            s={0}
+            xs={0}
+            className="d-flex justify-content-center align-items-center"
+          >
+            <Navbar expand="md">
               <Collapse isOpen={isOpen} navbar>
                 <Nav className="me-auto" navbar>
                   <NavItem className="mx-2">
@@ -142,98 +177,111 @@ function Navigator({lang}) {
                       </span>
                     </NavLink>
                   </NavItem>
+                  <NavItem className="mx-2">
+                    <div
+                      style={{ width: "100%", height: "100%" }}
+                      className="d-flex justify-content-center align-items-center"
+                    >
+                      <div className="language-select" onClick={()=>{
+                        localStorage.setItem('language', "EN");
+                        window.location.reload();
+                      }}>🇬🇧</div> &nbsp; | &nbsp;<div className="language-select" onClick={()=>{
+                        localStorage.setItem('language', "RO");
+                        window.location.reload();
+                      }}>🇷🇴</div>
+                    </div>
+                  </NavItem>
                 </Nav>
               </Collapse>
-              </Navbar>
-            </Col>
-            
-            <Col xl={1} l={1} md={1} s={6} xs={6}>
-              {isSmallScreen && (
-                <div>
-                  <Offcanvas
-                    backdrop={false}
-                    direction="bottom"
-                    fade={false}
-                    isOpen={isBurgerOpen} // Controlled by state
-                    toggle={setBurgerOpen} // Toggled by the button or close button inside
-                    className="fullscreen-offcanvas"
-                    style={{ zIndex: 99, overflowY:'hidden' }}
-                    scrollable={false}
-                    unmountOnClose={false}
-                  >
-                    <OffcanvasBody className="sliding-background-color">
-                      <Container>
-                        <Row>
-                          <a
-                            href="/"
-                            className="nav-text-font nav-text-large nav-option space-grotesk-1"
+            </Navbar>
+          </Col>
+
+          <Col xl={1} l={1} md={1} s={6} xs={6}>
+            {isSmallScreen && (
+              <div>
+                <Offcanvas
+                  backdrop={false}
+                  direction="bottom"
+                  fade={false}
+                  isOpen={isBurgerOpen} // Controlled by state
+                  toggle={setBurgerOpen} // Toggled by the button or close button inside
+                  className="fullscreen-offcanvas"
+                  style={{ zIndex: 99, overflowY: "hidden" }}
+                  scrollable={false}
+                  unmountOnClose={false}
+                >
+                  <OffcanvasBody className="sliding-background-color">
+                    <Container>
+                      <Row>
+                        <a
+                          href="/"
+                          className="nav-text-font nav-text-large nav-option space-grotesk-1"
+                        >
+                          <span
+                            className={`"nav-button-color space-grotesk-1 inverted-color-text " ${
+                              currentRoute === "/home" || currentRoute === "/"
+                                ? "nav-text-underline-sure"
+                                : "nav-text-underline"
+                            }`}
                           >
-                            <span
-                              className={`"nav-button-color space-grotesk-1 inverted-color-text " ${
-                                currentRoute === "/home" || currentRoute === "/"
-                                  ? "nav-text-underline-sure"
-                                  : "nav-text-underline"
-                              }`}
-                            >
-                              {navLang.home}
-                            </span>
-                          </a>
-                        </Row>
-                        <Row>
-                          <a
-                            href="/about"
-                            className="nav-text-font nav-text-large nav-option space-grotesk-1"
+                            {navLang.home}
+                          </span>
+                        </a>
+                      </Row>
+                      <Row>
+                        <a
+                          href="/about"
+                          className="nav-text-font nav-text-large nav-option space-grotesk-1"
+                        >
+                          <span
+                            className={`"nav-button-color space-grotesk-1 inverted-color-text " ${
+                              currentRoute == "/about"
+                                ? "nav-text-underline-sure"
+                                : "nav-text-underline"
+                            }`}
                           >
-                            <span
-                              className={`"nav-button-color space-grotesk-1 inverted-color-text " ${
-                                currentRoute == "/about"
-                                  ? "nav-text-underline-sure"
-                                  : "nav-text-underline"
-                              }`}
-                            >
-                              {navLang.about}
-                            </span>
-                          </a>
-                        </Row>
-                        <Row>
-                          <a
-                            href="/packages"
-                            className="nav-text-font nav-text-large nav-option space-grotesk-1"
+                            {navLang.about}
+                          </span>
+                        </a>
+                      </Row>
+                      <Row>
+                        <a
+                          href="/packages"
+                          className="nav-text-font nav-text-large nav-option space-grotesk-1"
+                        >
+                          <span
+                            className={`"nav-button-color space-grotesk-1 inverted-color-text " ${
+                              currentRoute == "/packages"
+                                ? "nav-text-underline-sure"
+                                : "nav-text-underline"
+                            }`}
                           >
-                            <span
-                              className={`"nav-button-color space-grotesk-1 inverted-color-text " ${
-                                currentRoute == "/packages"
-                                  ? "nav-text-underline-sure"
-                                  : "nav-text-underline"
-                              }`}
-                            >
-                              {navLang.packages}
-                            </span>
-                          </a>
-                        </Row>
-                        <Row>
-                          <a
-                            href="/contact"
-                            className="nav-text-font nav-text-large nav-option space-grotesk-1"
+                            {navLang.packages}
+                          </span>
+                        </a>
+                      </Row>
+                      <Row>
+                        <a
+                          href="/contact"
+                          className="nav-text-font nav-text-large nav-option space-grotesk-1"
+                        >
+                          <span
+                            className={`"nav-button-color space-grotesk-1 inverted-color-text " ${
+                              currentRoute == "/contact"
+                                ? "nav-text-underline-sure"
+                                : "nav-text-underline"
+                            }`}
                           >
-                            <span
-                              className={`"nav-button-color space-grotesk-1 inverted-color-text " ${
-                                currentRoute == "/contact"
-                                  ? "nav-text-underline-sure"
-                                  : "nav-text-underline"
-                              }`}
-                            >
-                              {navLang.contact}
-                            </span>
-                          </a>
-                        </Row>
-                      </Container>
-                    </OffcanvasBody>
-                  </Offcanvas>
-                </div>
-              )}
-            </Col>
-          
+                            {navLang.contact}
+                          </span>
+                        </a>
+                      </Row>
+                    </Container>
+                  </OffcanvasBody>
+                </Offcanvas>
+              </div>
+            )}
+          </Col>
         </Row>
       </Container>
     </div>
