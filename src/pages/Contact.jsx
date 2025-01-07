@@ -19,11 +19,11 @@ import "./Contact.css";
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 function Contact({langData, navData}) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Initial check
   const [emailValid, setEmailValid] = useState(undefined);
   const [generalError, setGeneralError] = useState("");
   const [submit, setSubmit] = useState(undefined);
   const [navLang, setNavLang] = useState(null)
-
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -40,6 +40,21 @@ function Contact({langData, navData}) {
     if (langData) setLangFile(langData);
     if (navData) setNavLang(navData);
   }, [langData, navData]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Add event listener for resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -67,7 +82,8 @@ function Contact({langData, navData}) {
       formData.message.length === 0 ||
       formData.phoneNumber.length === 0
     ) {
-      setGeneralError("Please fill out the form 🥰");
+      setGeneralError(langFile.contact_form.general_error);
+      console.log(langFile.contact_form.general_error)
       return;
     }
     // Save form data to Firestore
@@ -105,8 +121,8 @@ function Contact({langData, navData}) {
     <div>
       <div style={{ minHeight: "100vh" }} className="background-dark-color">
         <Navigator lang={navLang} />
-        <Container fluid style={{minHeight:'100vh'}} className="margin-from-header default-container-padding">
-          <Row>
+        <Container fluid style={{minHeight:'70vh'}} className="d-flex margin-from-header default-container-padding">
+          <Row style={{heigh:'inherit'}} className="justify-content-center align-items-center">
             <Col lg={6} md={12}>
           <Row>
             <div className="inverted-color-text space-grotesk-big-bold medium-text justify-text">
@@ -124,6 +140,7 @@ function Contact({langData, navData}) {
           </Row>
           </Col>
           <Col lg={6} md={12}>
+          {isMobile && <br></br>}
           <Form onSubmit={handleSubmit}>
             <Row>
               <Col lg={6} md={12}>
@@ -226,7 +243,7 @@ function Contact({langData, navData}) {
               </Col>
             </Row>
           </Form>
-          {generalError.length > 0 && (
+          {generalError?.length > 0 && (
             <Alert
               color="danger"
               onClick={() => {
