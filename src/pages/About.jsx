@@ -58,28 +58,15 @@ function About({langData, navData}) {
               <br></br>
               <br></br>
               <div className={"space-grotesk-slim italic justify-text "}>
-                {langFile.body_text_1}
-                <br></br>
-                <br></br>
-                {langFile.body_text_2}
-                <br></br>
-                <br></br>
-                {langFile.body_text_3}
-                <br></br>
-                <br></br>
-                {langFile.body_text_4}
-                <br></br>
-                <br></br>
-                {langFile.body_text_5}
-                <br></br>
-                <br></br>
-                {langFile.body_text_6}
-                <br></br>
-                <br></br>
-                {langFile.body_text_7}
-                <br></br>
-                <br></br>
-                {langFile.body_text_8}
+                {langFile.body_text.map((element)=>{
+                  return (
+                    <div>
+                      <span>{element}</span>
+                      <br></br>
+                      <br></br>
+                    </div>
+                  );
+                })}
               </div>
               <br></br>
             </Col>

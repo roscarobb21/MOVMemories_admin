@@ -4,23 +4,26 @@
     "home": "Home",
     "about": "About",
     "packages": "Packages",
-    "contact": "Contact"
+    "contact": "Contact",
+    "language": "Language"
   },
   "pages": {
     "home": {
       "small_accent": "Embark on a cinematic journey with us"
     },
     "about": {
-        "header_text":"Hi, and thank you for stopping by!",
-        "body_text_1":"Perhaps you didn't find us by chance, and if you're here, here's what you should know about us:",
-        "body_text_2":"In our daily lives we are partners and in our work, we are a creative team dedicated to capturing authentic emotions and vibrant stories through our camera lens. Whether you're planning a wedding, a baptism, or any other significant moment, we are here to transform your memories into visual art.",
-        "body_text_3":"We believe that the beauty of videography lies in each artist's eye and the connection they create with their subjects.",
-        "body_text_4":"More than just your videographers, we want to join your journey as your supporters. We are here to listen, guide, and help.",
-        "body_text_5":"On your big day, we put all worries aside. We take care of everything related to videography so that you can focus on living and enjoying every moment. We believe that your relaxation and naturalness are key to authentic and memorable videos.",
-        "body_text_6":"A successful video is the result of close collaboration and trust between us and you. The more open and relaxed you are, the more beautifully your story will be portrayed through our lens.",
-        "body_text_7":"We are excited to meet you and turn every special moment into an everlasting memory. Our work is way beyond simple videos; it reflects our artistic signature.",
-        "body_text_8":"Let's create something magical together!"
-      },
+      "header_text": "Hi, and thank you for stopping by!",
+      "body_text": [
+        "Perhaps you didn't find us by chance, and if you're here, here's what you should know about us:",
+        "In our daily lives we are partners and in our work, we are a creative team dedicated to capturing authentic emotions and vibrant stories through our camera lens. Whether you're planning a wedding, a baptism, or any other significant moment, we are here to transform your memories into visual art.",
+        "We believe that the beauty of videography lies in each artist's eye and the connection they create with their subjects.",
+        "More than just your videographers, we want to join your journey as your supporters. We are here to listen, guide, and help.",
+        "On your big day, we put all worries aside. We take care of everything related to videography so that you can focus on living and enjoying every moment. We believe that your relaxation and naturalness are key to authentic and memorable videos.",
+        "A successful video is the result of close collaboration and trust between us and you. The more open and relaxed you are, the more beautifully your story will be portrayed through our lens.",
+        "We are excited to meet you and turn every special moment into an everlasting memory. Our work is way beyond simple videos; it reflects our artistic signature.",
+        "Let's create something magical together!"
+      ]
+    },
     "packages": [
       {
         "header": "Memories Box “Dancing into Forever”",
@@ -33,8 +36,10 @@
       {
         "header": "Memories Box “How it all started”",
         "price_tag": "£1800",
-        "description": ["This box offers a 10-15 minutes wedding film capturing all the essential moments of your wedding day—from bride and groom preparations through the ceremony and reception, right up to the first dance. Including preparation moments in your wedding film captures the emotions before the ceremony. These are moments that reveal candid, meaningful interactions and can add an extra spice to your wedding film." , 
-        "Drone footage is included, weather and location permitting, to capture stunning aerial views and add a unique perspective to your wedding film."]
+        "description": [
+          "This box offers a 10-15 minutes wedding film capturing all the essential moments of your wedding day—from bride and groom preparations through the ceremony and reception, right up to the first dance. Including preparation moments in your wedding film captures the emotions before the ceremony. These are moments that reveal candid, meaningful interactions and can add an extra spice to your wedding film.",
+          "Drone footage is included, weather and location permitting, to capture stunning aerial views and add a unique perspective to your wedding film."
+        ]
       },
       {
         "header": "Memories Box “Love Fiesta”",
@@ -46,20 +51,19 @@
         ]
       }
     ],
-  "contact" :
-  {
-    "header" : "Fill out the form and we'll get back to you faster than you can say “I do.”",
-    "body" : "Alternatively, you can email us @ info@movmemories.com or contact us on social media by pressing on your preferred one below",
-    "contact_form": {
-      "first_name": "First Name",
-      "last_name": "Last Name",
-      "email": "Email",
-      "phone_number": "Phone Number",
-      "message": "Message",
-      "submit":"Submit",
-      "email_error":"Please provide valid email address 🥰",
-      "submit_success":"Form submitted. We will contact you asap 🥰"
+    "contact": {
+      "header": "Fill out the form and we'll get back to you faster than you can say “I do.”",
+      "body": "Alternatively, you can email us @ info@movmemories.com or contact us on social media by pressing on your preferred one below",
+      "contact_form": {
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "email": "Email",
+        "phone_number": "Phone Number",
+        "message": "Message",
+        "submit": "Submit",
+        "email_error": "Please provide valid email address 🥰",
+        "submit_success": "Form submitted. We will contact you asap 🥰"
+      }
     }
   }
-}
 }

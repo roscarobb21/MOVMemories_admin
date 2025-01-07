@@ -184,7 +184,7 @@ function Navigator({lang}) {
                   <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
                       <span className="nav-button-color space-grotesk-1 inverted-color-text ">
-                        Language
+                        {navLang.language}
                       </span>
                     </DropdownToggle>
                     <DropdownMenu right>
@@ -324,7 +324,7 @@ function Navigator({lang}) {
                             className="nav-text-font nav-text-large nav-option space-grotesk-1"
                           >
                             {" "}
-                            <span className="nav-button-color space-grotesk-1 inverted-color-text" style={{fontSize:'2rem'}}>Language</span>
+                            <span className="nav-button-color space-grotesk-1 inverted-color-text" style={{fontSize:'2rem'}}>{navLang.language}</span>
                           </DropdownToggle>
                           <DropdownMenu dark>
                           <DropdownItem
