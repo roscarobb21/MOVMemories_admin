@@ -52,8 +52,8 @@
       }
     ],
     "contact": {
-      "header": "Fill out the form and we'll get back to you faster than you can say “I do.”",
-      "body": "Alternatively, you can email us @ info@movmemories.com or contact us on social media by pressing on your preferred one below",
+      "header": "Fill out the form and we'll get back to you faster than you can say “I do”.",
+      "body": "You can also submit a meeting request by checking meeting request button. Alternatively, you can email us @ info@movmemories.com or contact us on social media by pressing on your preferred one below",
       "contact_form": {
         "first_name": "First Name",
         "last_name": "Last Name",
@@ -62,7 +62,11 @@
         "message": "Message",
         "submit": "Submit",
         "email_error": "Please provide valid email address 🥰",
+        "general_error": "Please fill out the form 🥰",
         "submit_success": "Form submitted. We will contact you asap 🥰"
+      },
+      "booking": {
+        "header": "Or, book a meeting directly with us:"
       }
     }
   }

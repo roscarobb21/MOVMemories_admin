@@ -61,7 +61,11 @@
       "message": "Message",
       "submit":"Submit",
       "email_error":"Please provide valid email address 🥰",
-      "submit_success":"Form submitted. We will contact you asap 🥰"
+      "general_error": "Please fill out the form 🥰",
+      "submit_success":"Form submitted. We will contact you asap 🥰",
+      "booking": {
+        "header": "Or, book a meeting directly with us:"
+      }
     }
   }
 }

@@ -13,6 +13,7 @@ import {
 import { db, collection, addDoc } from "../firebase";
 
 import Socials from "../elements/Socials";
+import Booking from "../elements/Booking";
 import Loader from "../pages/Loader";
 
 import "./Contact.css";
@@ -121,150 +122,175 @@ function Contact({langData, navData}) {
     <div>
       <div style={{ minHeight: "100vh" }} className="background-dark-color">
         <Navigator lang={navLang} />
-        <Container fluid style={{minHeight:'70vh'}} className="d-flex margin-from-header default-container-padding">
-          <Row style={{heigh:'inherit'}} className="justify-content-center align-items-center">
+        <Container
+          fluid
+          style={{}}
+          className="d-flex margin-from-header default-container-padding"
+        >
+          <Row
+            style={{ heigh: "inherit" }}
+            className="justify-content-center align-items-center"
+          >
             <Col lg={6} md={12}>
-          <Row>
-            <div className="inverted-color-text space-grotesk-big-bold medium-text justify-text">
-              {langFile.header}
-            </div>
-          </Row>
-          <br></br>
-          <br></br>
-          <Row>
-            <div className="inverted-color-text space-grotesk-slim justify-text">
-              {/* Alternatively, you can email us @ info@movmemories.com or contact
+              <Row>
+                <div className="inverted-color-text space-grotesk-big-bold medium-text justify-text">
+                  {langFile.header}
+                </div>
+              </Row>
+              <br></br>
+              <br></br>
+              <Row>
+                <div className="inverted-color-text space-grotesk-slim justify-text">
+                  {/* Alternatively, you can email us @ info@movmemories.com or contact
               us on social media by pressing on your preferred one below */}
-              {langFile.body}
-            </div>
-          </Row>
-          </Col>
-          <Col lg={6} md={12}>
-          {isMobile && <br></br>}
-          <Form onSubmit={handleSubmit}>
-            <Row>
-              <Col lg={6} md={12}>
-                <FormGroup className="d-flex flex-column">
-                  <FormFeedback invalid={generalError}>
-                    {generalError}
-                  </FormFeedback>
-                  <Label for="firstName" className="form-label">
-                    <span className="inverted-color-text space-grotesk-1">
-                      {langFile.contact_form.first_name}
-                    </span>
-                  </Label>
-                  <Input
-                    value={formData.firstName}
-                    valid={undefined}
-                    onChange={handleChange}
-                    id="firstName"
-                    name="firstName"
-                  />
-                </FormGroup>
-              </Col>
-              <Col lg={6} md={12}>
-                <FormGroup className="d-flex flex-column">
-                  <Label for="lastName" className="form-label">
-                    <span className="inverted-color-text space-grotesk-1">
-                      {/* Last Name */}
-                      {langFile.contact_form.last_name}
-                    </span>
-                  </Label>
-                  <Input
-                    value={formData.lastName}
-                    valid={undefined}
-                    onChange={handleChange}
-                    id="lastName"
-                    name="lastName"
-                  />
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row>
-              <FormGroup className="d-flex flex-column">
-                <Label for="email" className="form-label">
-                  <span className="inverted-color-text space-grotesk-1">
-                    {/* Email */}
-                    {langFile.contact_form.email}
-                  </span>
-                </Label>
-                <Input
-                  value={formData.email}
-                  invalid={emailValid}
-                  onChange={handleChange}
-                  id="email"
-                  name="email"
-                />
-                <FormFeedback invalid={generalError}>
-                  {langFile.contact_form.email_error}
-                </FormFeedback>
-              </FormGroup>
-            </Row>
-            <Row>
-              <FormGroup className="d-flex flex-column">
-                <Label for="number" className="form-label">
-                  <span className="inverted-color-text space-grotesk-1">
-                    {/* Phone Number */}
-                    {langFile.contact_form.phone_number}
-                  </span>
-                </Label>
-                <Input
-                  value={formData.phoneNumber}
-                  valid={undefined}
-                  onChange={handleChange}
-                  id="phoneNumber"
-                  name="phoneNumber"
-                />
-              </FormGroup>
-            </Row>
-            <Row>
-              <FormGroup className="d-flex flex-column">
-                <Label for="message" className="mb-1 form-label">
-                  <span className="inverted-color-text space-grotesk-1 left-text-alignment">
-                    {/* Message */}
-                    {langFile.contact_form.message}
-                  </span>
-                </Label>
-                <Input
-                  value={formData.message}
-                  onChange={handleChange}
-                  id="message"
-                  name="message"
-                  type="textarea"
-                />
-              </FormGroup>
-            </Row>
-            <Row>
-              <Col className="d-flex">
-              <Button outline className="contact-button">
-                {/* Submit */}
-                {langFile.contact_form.submit}
-              </Button>
-              </Col>
-            </Row>
-          </Form>
-          {generalError?.length > 0 && (
-            <Alert
-              color="danger"
-              onClick={() => {
-                setGeneralError("");
-              }}
-            >
-              {generalError}
-            </Alert>
-          )}
-          {submit && <Alert
-              color="primary"
-              onClick={() => {
-                setSubmit(undefined);
-              }}
-            >
-              {/* Form submitted. We will contact you asap 🥰 */}
-              {langFile.contact_form.submit_success}
-            </Alert>}
+                  {langFile.body}
+                </div>
+              </Row>
             </Col>
-            </Row>
+            <Col lg={6} md={12}>
+              {isMobile && <br></br>}
+              <Form onSubmit={handleSubmit}>
+                <Row>
+                  <Col lg={6} md={12}>
+                    <FormGroup className="d-flex flex-column">
+                      <FormFeedback invalid={generalError}>
+                        {generalError}
+                      </FormFeedback>
+                      <Label for="firstName" className="form-label">
+                        <span className="inverted-color-text space-grotesk-1">
+                          {langFile.contact_form.first_name}
+                        </span>
+                      </Label>
+                      <Input
+                        value={formData.firstName}
+                        valid={undefined}
+                        onChange={handleChange}
+                        id="firstName"
+                        name="firstName"
+                      />
+                    </FormGroup>
+                  </Col>
+                  <Col lg={6} md={12}>
+                    <FormGroup className="d-flex flex-column">
+                      <Label for="lastName" className="form-label">
+                        <span className="inverted-color-text space-grotesk-1">
+                          {/* Last Name */}
+                          {langFile.contact_form.last_name}
+                        </span>
+                      </Label>
+                      <Input
+                        value={formData.lastName}
+                        valid={undefined}
+                        onChange={handleChange}
+                        id="lastName"
+                        name="lastName"
+                      />
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <FormGroup className="d-flex flex-column">
+                    <Label for="email" className="form-label">
+                      <span className="inverted-color-text space-grotesk-1">
+                        {/* Email */}
+                        {langFile.contact_form.email}
+                      </span>
+                    </Label>
+                    <Input
+                      value={formData.email}
+                      invalid={emailValid}
+                      onChange={handleChange}
+                      id="email"
+                      name="email"
+                    />
+                    <FormFeedback invalid={generalError}>
+                      {langFile.contact_form.email_error}
+                    </FormFeedback>
+                  </FormGroup>
+                </Row>
+                <Row>
+                  <FormGroup className="d-flex flex-column">
+                    <Label for="number" className="form-label">
+                      <span className="inverted-color-text space-grotesk-1">
+                        {/* Phone Number */}
+                        {langFile.contact_form.phone_number}
+                      </span>
+                    </Label>
+                    <Input
+                      value={formData.phoneNumber}
+                      valid={undefined}
+                      onChange={handleChange}
+                      id="phoneNumber"
+                      name="phoneNumber"
+                    />
+                  </FormGroup>
+                </Row>
+                <Row>
+                  <FormGroup className="d-flex flex-column">
+                    <Label for="message" className="mb-1 form-label">
+                      <span className="inverted-color-text space-grotesk-1 left-text-alignment">
+                        {/* Message */}
+                        {langFile.contact_form.message}
+                      </span>
+                    </Label>
+                    <Input
+                      value={formData.message}
+                      onChange={handleChange}
+                      id="message"
+                      name="message"
+                      type="textarea"
+                    />
+                  </FormGroup>
+                </Row>
+                <Row>
+                  <Col>
+                    <FormGroup check>
+                      <Input type="checkbox" />{" "}
+                      <Label check>
+                        {" "}
+                        <span className="inverted-color-text space-grotesk-1 left-text-alignment">
+                          I want to request a meeting
+                        </span>
+                      </Label>
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col className="d-flex">
+                    <Button outline className="contact-button">
+                      {/* Submit */}
+                      {langFile.contact_form.submit}
+                    </Button>
+                  </Col>
+                </Row>
+              </Form>
+              {generalError?.length > 0 && (
+                <Alert
+                  color="danger"
+                  onClick={() => {
+                    setGeneralError("");
+                  }}
+                >
+                  {generalError}
+                </Alert>
+              )}
+              {submit && (
+                <Alert
+                  color="primary"
+                  onClick={() => {
+                    setSubmit(undefined);
+                  }}
+                >
+                  {/* Form submitted. We will contact you asap 🥰 */}
+                  {langFile.contact_form.submit_success}
+                </Alert>
+              )}
+            </Col>
+          </Row>
         </Container>
+        <div>
+          <Booking lang={langFile.booking} />
+        </div>
         <Socials />
       </div>
     </div>

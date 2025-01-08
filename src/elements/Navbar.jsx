@@ -181,13 +181,13 @@ function Navigator({lang}) {
                       </span>
                     </NavLink>
                   </NavItem>
-                  <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle nav caret>
+                  <UncontrolledDropdown nav inNavbar >
+                    <DropdownToggle nav >
                       <span className="nav-button-color space-grotesk-1 inverted-color-text ">
                         {navLang.language}
                       </span>
                     </DropdownToggle>
-                    <DropdownMenu right>
+                    <DropdownMenu className="dropdown-menu-dark">
                       <DropdownItem
                         onClick={() => {
                           localStorage.setItem("language", "EN");
