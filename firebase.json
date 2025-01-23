@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "movmemories-834fc-admin",
     "public": "public",
     "ignore": [
       "firebase.json",
